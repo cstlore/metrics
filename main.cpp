@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #define ll long long
-#define l long double
+#define ld long double
 #include "metrics.hpp"
 using namespace std;
 random_device rd;
