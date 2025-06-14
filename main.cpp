@@ -8,8 +8,8 @@ mt19937 rnd(rd());
 
 int main() {
     Metrics metrics("metrics.txt");
-    metrics.register_metric(new Metric<double>("CPU"));
-    metrics.register_metric(new Metric<int>("HTTP requests RPS"));
+    metrics.register_metric<double>("CPU");
+    metrics.register_metric<int>("HTTP requests RPS");
     // две механики: metrics.add и metrics.set
     metrics.start();
     uniform_real_distribution<double> cpu_dist(0, 8);

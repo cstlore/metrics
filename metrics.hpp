@@ -55,9 +55,17 @@ public:
         out.open(file_name);
     }
 
-    void register_metric(IMetric *metric) {
+    // void register_metric(IMetric *metric) {
+    //     m.lock();
+    //     _metrics[metric->get_name()] = metric;
+    //     m.unlock();
+    // }
+
+    template<typename T>
+    void register_metric(string metric_name) {
         m.lock();
-        _metrics[metric->get_name()] = metric;
+        auto metric = new Metric<T>(metric_name);
+        _metrics[metric_name] = metric;
         m.unlock();
     }
 
