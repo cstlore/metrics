@@ -17,7 +17,7 @@ int main() {
     for (ll i = 0; i < 30; ++i) {
         metrics.set("HTTP requests RPS", http_dist(rnd));
         metrics.set("CPU", cpu_dist(rnd));
-        this_thread::sleep_for(chrono::milliseconds(500));
+        this_thread::sleep_for(chrono::milliseconds(300));
     }
     metrics.stop();
     return 0;
