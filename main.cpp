@@ -10,8 +10,12 @@ int main() {
     Metrics metrics("metrics.txt");
     metrics.register_metric<double>("CPU");
     metrics.register_metric<int>("HTTP requests RPS");
+    metrics.add("HTTP requests RPS", 5);
+    metrics.add("HTTP requests RPS", 5);
+    metrics.add("HTTP requests RPS", 5);
     // две механики: metrics.add и metrics.set
     metrics.start();
+    this_thread::sleep_for(chrono::milliseconds(1000));
     uniform_real_distribution<double> cpu_dist(0, 8);
     uniform_int_distribution<int> http_dist(0, INT_MAX);
     for (ll i = 0; i < 30; ++i) {
